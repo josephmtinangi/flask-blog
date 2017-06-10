@@ -77,3 +77,10 @@ def login():
             flash('You were logged in')
             return redirect(url_for('index'))
     return render_template('auth/login.html', error=error)
+
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    flash('You were logged out')
+    return redirect(url_for('index'))
