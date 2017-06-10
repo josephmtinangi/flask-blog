@@ -43,3 +43,11 @@ def get_db():
 def close_db(error):
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
+
+
+@app.route('/')
+def index():
+    db = get_db()
+    cur = db.execute('SELECT title, content FROM posts ORDER BY id DESC')
+    posts = cur.fetchall()
+    return render_template('posts/index.html', posts=posts)
