@@ -1,0 +1,4 @@
+graft blog/templates
+graft blog/static
+include blog/schema.sql
+
