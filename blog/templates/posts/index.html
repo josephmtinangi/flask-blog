@@ -1,6 +1,32 @@
 {% extends "layouts/app.html" %}
 {% block content %}
 
-<h1>Blog Home</h1>
+<div class="container">
+    <ol class="breadcrumb">
+        <li class="active">
+            <a href="/">Home</a>
+        </li>
+    </ol>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            {% for post in posts %}
+            <div class="post">
+                <h1>
+                    <a href="#">
+                        {{ post.title }}
+                    </a>
+                </h1>
+
+                {{ post.content }}
+            </div>
+            {% else %}
+            <li>Unbelievable</li>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

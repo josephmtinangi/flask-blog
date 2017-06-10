@@ -53,6 +53,11 @@ def index():
     return render_template('posts/index.html', posts=posts)
 
 
+@app.route('/posts/new', methods=['GET'])
+def new():
+    return render_template('posts/new.html')
+
+
 @app.route('/posts', methods=['POST'])
 def store():
     if not session.get('logged_in'):
