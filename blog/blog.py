@@ -51,3 +51,14 @@ def index():
     cur = db.execute('SELECT title, content FROM posts ORDER BY id DESC')
     posts = cur.fetchall()
     return render_template('posts/index.html', posts=posts)
+
+
+@app.route('/posts', methods=['POST'])
+def store():
+    if not session.get('logged_in'):
+        abort(401)
+    db = get_db()
+    db.execute('INSERT INTO posts (title, content) VALUES(?, ?)', [request.form['title'], request.form['content']])
+    db.commit()
+    flash('New post was successfully added')
+    return redirect(url_for('index'))
