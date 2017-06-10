@@ -33,3 +33,12 @@ article {
     font-size: 5rem;
     letter-spacing: 1.5;
 }
+
+footer {
+    margin-top: 30px;
+    padding-top:  50px;
+    padding-bottom: 50px;
+    text-align: center;
+    background: #002F2F;
+    color: #E6E2AF;
+}
