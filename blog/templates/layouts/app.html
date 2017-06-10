@@ -7,7 +7,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #eee;
+        }
+
+        .navbar {
+            border-radius: 0;
+        }
+
+        a, h1, h2 {
+            color: #377ba8;
+        }
+
+        h1, h2 {
+            font-family: 'Georgia', Serif;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+
+        .jumbotron {
+            background: #046380;
+            color: #A7A37E;
+        }
+
+        article {
+            font-size: 28px;
+            letter-spacing: 1.5;
+            color: #777;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-top:  80px;
+            padding-bottom: 80px;
+            text-align: center;
+            background: #002F2F;
+            color: #E6E2AF;
+        }        
+    </style>
 </head>
 <body>
 
@@ -27,7 +69,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/posts">Posts</a></li>
+                <li><a href="/">Posts</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if not session.logged_in %}
@@ -62,7 +104,7 @@
         Developed with <span class="glyphicon glyphicon-heart"></span> by <a href="https://about.me/josephmtinangi">Joseph Mtinangi</a>
     </p>
     <p>
-        <a href="https://github.com/josephmtinangi/flask-blog"><span class="glyphicon glyphicon-github"></span> Source Code</a>
+        <a href="https://github.com/josephmtinangi/flask-blog"><span class="glyphicon glyphicon-github"></span> Github</a>
     </p>
 </footer>
 

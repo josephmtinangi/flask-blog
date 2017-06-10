@@ -1,17 +1,21 @@
 {% extends "layouts/app.html" %} {% block content %}
 
 <div class="jumbotron">
-    <div class="container">
+    <div class="container text-center">
         <h1>
             {{ post.title }}
         </h1>
     </div>
 </div>
 
-<section class="container">
-    <article>
-        {{ post.content|safe }}
-    </article>
-</section>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+		    <article>
+		        {{ post.content|safe }}
+		    </article>		
+		</div>
+	</div>
+</div>
 
 {% endblock %}
