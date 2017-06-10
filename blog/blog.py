@@ -48,9 +48,17 @@ def close_db(error):
 @app.route('/')
 def index():
     db = get_db()
-    cur = db.execute('SELECT title, content FROM posts ORDER BY id DESC')
+    cur = db.execute('SELECT * FROM posts ORDER BY id DESC')
     posts = cur.fetchall()
     return render_template('posts/index.html', posts=posts)
+
+
+@app.route('/posts/<int:post_id>', methods=['GET'])
+def show(post_id):
+    db = get_db()
+    cur = db.execute('SELECT * FROM posts WHERE id=?', [post_id])
+    post = cur.fetchone()
+    return render_template('posts/show.html', post=post)
 
 
 @app.route('/posts/new', methods=['GET'])
